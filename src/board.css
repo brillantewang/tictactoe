@@ -1,0 +1,15 @@
+.board-container {
+  border: 1px solid white;
+  display: inline-block;
+}
+
+.row {
+  display: flex;
+}
+
+.cell {
+  background-color: blue;
+  height: 100px;
+  width: 100px;
+  border: 1px solid white;
+}
