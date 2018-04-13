@@ -2,6 +2,18 @@ import React, { Component } from 'react';
 import './board.css';
 
 class Board extends Component {
+  constructor() {
+    super();
+    this.state = {
+      board: [
+        [null, null, null],
+        [null, null, null],
+        [null, null, null]
+      ],
+      currentPlayer: 'X'
+    }
+  }
+
   render() {
     return (
       <div class="board-container">
