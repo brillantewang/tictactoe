@@ -17,13 +17,16 @@ class Board extends Component {
   }
 
   handleClick(row, col) {
-    let newBoard = this.state.board;
-    newBoard[row][col] = this.state.currentPlayer;
-
-    this.setState({
-      board: newBoard,
-      currentPlayer: this.state.currentPlayer === 'X' ? 'O' : 'X'
-    })
+    this.props.addMark(row, col, this.state.currentPlayer);
+    // this.props.changePlayer();
+    //
+    // let newBoard = this.state.board;
+    // newBoard[row][col] = this.state.currentPlayer;
+    //
+    // this.setState({
+    //   board: newBoard,
+    //   currentPlayer: this.state.currentPlayer === 'X' ? 'O' : 'X'
+    // })
   }
 
   render() {
