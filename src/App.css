@@ -1,3 +1,12 @@
 .app {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+
+.app span {
+  font-size: 30px;
   color: white;
+  margin-top: 40px;
 }

@@ -2,7 +2,9 @@ import App from './App';
 import { connect } from 'react-redux';
 
 const mapStateToProps = state => ({
-  currentPlayer: state.currentPlayer
+  currentPlayer: state.currentPlayer,
+  board: state.board,
+  gameWinner: state.gameWinner
 })
 
 export default connect(

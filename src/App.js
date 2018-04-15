@@ -8,11 +8,23 @@ class App extends Component {
     super();
   }
 
+  isBoardFull() {
+    return this.props.board.every(row => {
+      return row.every(cell => cell !== null )
+    })
+  }
+
+  isGameOver() {
+    if (this.isBoardFull()) return true;
+  }
+
   render() {
     return (
       <div className="app">
         <Board/>
-        Player {this.props.currentPlayer}'s turn
+        <span>
+          {this.isGameOver() ? `${this.props.gameWinner} wins` : `Player ${this.props.currentPlayer}'s turn`}
+        </span>
       </div>
     )
   }
