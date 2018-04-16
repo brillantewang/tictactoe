@@ -13,12 +13,17 @@ class App extends Component {
 
   componentDidUpdate() {
     if (this.isThreeInARow() && this.state.gameWinner === 'Nobody') {
+      this.disableAllCells();
       this.updateWinner();
     }
   }
 
+  disableAllCells() {
+    let cells = document.querySelectorAll('.cell');
+    cells.forEach(cell => cell.classList.add('disabled'));
+  }
+
   isHorizontalWin() {
-    console.log(this.props);
     return this.props.board.some(row => {
       return row.every(cell => cell !== null && cell === row[0])
     })
@@ -79,12 +84,11 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state);
     return (
       <div className="app">
         <Board/>
         <span>
-          {this.isGameOver() ? `${this.state.gameWinner} wins` : `Player ${this.props.currentPlayer}'s turn`}
+          {this.isGameOver() ? `${this.state.gameWinner} wins!` : `${this.props.currentPlayer}'s turn`}
         </span>
       </div>
     )

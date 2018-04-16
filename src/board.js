@@ -22,7 +22,6 @@ class Board extends Component {
   }
 
   render() {
-    console.log(this.props);
     return (
       <div className="board-container">
         <div className="row top-row">
