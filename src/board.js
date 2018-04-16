@@ -8,8 +8,16 @@ class Board extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
+  // componentWillReceiveProps(nextProps) {
+  //   console.log(nextProps);
+  //   if (nextProps !== this.props) {
+  //     if (this.threeInARow()) this.props.updateWinner(this.props.currentPlayer);
+  //   }
+  // }
+
   handleClick(row, col) {
-    this.props.addMark(row, col, this.props.currentPlayer);
+    console.log(this.props.addMark(row, col, this.props.currentPlayer));
+
     this.props.changePlayer();
   }
 
