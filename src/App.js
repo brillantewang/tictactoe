@@ -32,6 +32,17 @@ class App extends Component {
     })
   }
 
+  isDiagonalWin() {
+    return this.props.board.every((row, row_idx) => {
+      return row[row_idx] === this.props.board[0][0] &&
+             row[row_idx] !== null;
+    }) ||
+    this.props.board.every((row, row_idx) => {
+      return row[(row.length - 1) - row_idx] === this.props.board[0][2] &&
+             row[(row.length - 1) - row_idx] !== null;
+    });
+  }
+
   transpose(matrix) {
     let transposed = [
       [null, null, null],
@@ -53,7 +64,9 @@ class App extends Component {
   }
 
   isThreeInARow() {
-    return this.isHorizontalWin() || this.isVerticalWin();
+    return this.isHorizontalWin() ||
+           this.isVerticalWin() ||
+           this.isDiagonalWin();
   }
 
   isBoardFull() {
